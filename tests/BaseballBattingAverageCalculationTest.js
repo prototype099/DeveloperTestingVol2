@@ -31,6 +31,20 @@ $(document).ready(function(){
 		equal(baseball.calcBattingAverage(3,0,1), "0.000", "打席数が0でなく打数が0の場合2 = 0.000");
 	});
 
-	
 
+	// Part4
+	test("選手の打率を整形表示（0.333 -> .333）",function(){
+		equal(baseball.toStringBattingAverage(3,3,1), ".333", "打率を整形表示（0.333 -> .333）");
+	});
+
+	test("選手の打率を整形表示（10割の場合は 1.00）", function(){
+		equal(baseball.toStringBattingAverage(1,1,1), "1.00", "打率を整形表示（打率10割 -> 1.00）");
+	});	
+	
+	test("選手の打率を整形表示（打率計算しない場合は ---- と出力）", function(){
+		equal(baseball.toStringBattingAverage(0,0,0), "----", "打率を整形表示(打率計算しない場合 -> ----）");
+	});	
+
+
+	
 });
